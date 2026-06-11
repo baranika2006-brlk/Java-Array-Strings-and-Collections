@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        
+        int len = 0;
+        for (char ch : str.toCharArray()) {
+            len++;
+        }
+        
+        int totalDiff = 0;
+        
+        for (int i = 0; i < len - 1; i++) {
+            int diff = str.charAt(i) - str.charAt(i + 1);
+            
+            
+            if (diff < 0) {
+                diff = diff * -1; 
+            }
+            
+            totalDiff += diff; 
+        }
+        
+        System.out.println(totalDiff);
+    }
+}
