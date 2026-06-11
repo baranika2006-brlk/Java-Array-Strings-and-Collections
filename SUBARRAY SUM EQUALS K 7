@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String line = sc.nextLine();
+        String[] str = line.split(" ");
+
+        int[] nums = new int[str.length];
+
+        for (int i = 0; i < str.length; i++) {
+            nums[i] = Integer.parseInt(str[i]);
+        }
+
+        int k = sc.nextInt();
+        int count = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            int sum = 0;
+
+            for (int j = i; j < nums.length; j++) {
+                sum += nums[j];
+
+                if (sum == k) {
+                    count++;
+                }
+            }
+        }
+
+        System.out.println("The count of the subarray whereas equals to the target is : " + count);
+    }
+}
